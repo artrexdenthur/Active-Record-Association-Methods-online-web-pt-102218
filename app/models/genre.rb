@@ -3,7 +3,7 @@ class Genre < ActiveRecord::Base
   has_many :artists, through: :songs
 
   def song_count
-    Genre.joins(:song).distinct.count
+    self.songs.distinct.count
   end
 
   def artist_count
